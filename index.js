@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 
 app.use((req, res, next) => {
-    console.log(req.method.toUpperCase(), req.path)
+    const time = req.requestTime = Date.now()
+    console.log(req.method.toUpperCase(), req.path, time)
     next();
 })
 
