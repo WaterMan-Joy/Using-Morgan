@@ -3,6 +3,7 @@ const app = express();
 
 app.use((req, res, next) => {
     console.log(req.method.toUpperCase(), req.path)
+    next();
 })
 
 app.get('/', (req, res) => {
