@@ -7,12 +7,21 @@ app.use((req, res, next) => {
     next();
 })
 
+app.use('/dogs', (req, res, next) => {
+    console.log('I love dogs!')
+    next();
+})
+
 app.get('/', (req, res) => {
     res.send('HI')
 })
 
-app.get('/dog', (req, res) => {
+app.get('/dogs', (req, res) => {
     res.send('HI DOG')
+})
+
+app.use((req, res) => {
+    res.send('NOT FOUND!')
 })
 
 app.listen(3000, () => {
