@@ -20,6 +20,16 @@ app.get('/dogs', (req, res) => {
     res.send('HI DOG')
 })
 
+app.use((req, res, next) => {
+    const { password } = req.query;
+    if (password === "1234") {
+        next();
+    }
+    else {
+        res.send('SORRY YOU NEED A PASSWORD')
+    }
+})
+
 app.use((req, res) => {
     res.status(404).send('NOT FOUND!')
 })
