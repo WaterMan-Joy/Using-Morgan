@@ -16,7 +16,7 @@ const verifyPassword = ((req, res, next) => {
         next();
     }
     else {
-        res.send('SORRY YOU NEED A PASSWORD')
+        throw new Error('PAWWWORD REQUIRED')
     }
 })
 
